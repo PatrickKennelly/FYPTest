@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FYPDemo</string>
+    <string name="CustomerName">Customer Name</string>
+    <string name="CustomerAge">Age</string>
+</resources>
