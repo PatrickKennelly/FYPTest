@@ -2,6 +2,7 @@ package com.example.fypdemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -15,7 +16,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     //reference buttons on layout
-    Button btn_add, btn_viewAll;
+    Button btn_add, btn_viewAll, btn_next;
     EditText et_name, et_age;
     ListView lv_customerList;
 
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         btn_add = findViewById(R.id.btnAdd);
         btn_viewAll = findViewById(R.id.btn_viewAll);
+        btn_next = findViewById(R.id.btn_next);
         et_age = findViewById(R.id.et_age);
         et_name = findViewById(R.id.et_Name);
         lv_customerList = findViewById(R.id.lv_customerList);
@@ -68,6 +70,15 @@ public class MainActivity extends AppCompatActivity {
                 ArrayAdapter customerArrayAdapter = new ArrayAdapter<CustomerDetail>(MainActivity.this, android.R.layout.simple_list_item_1, everyone);
                 lv_customerList.setAdapter(customerArrayAdapter);
                 //Toast.makeText(MainActivity.this, everyone.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btn_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SpinnerActivity.class);
+                startActivity(intent);
+
             }
         });
 
