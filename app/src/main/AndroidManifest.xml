@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FYPDemo">
         <activity android:name=".LanguageCourses"></activity>
+        <activity android:name=".HistoryCourses"></activity>
+        <activity android:name=".HealthCourses"></activity>
+        <activity android:name=".SportCourses"></activity>
+        <activity android:name=".ComputerCourses"></activity>
         <activity android:name=".SpinnerActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

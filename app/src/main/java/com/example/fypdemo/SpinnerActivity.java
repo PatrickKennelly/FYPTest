@@ -14,6 +14,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+//This code was modified from the YouTube tutorial https://www.youtube.com/watch?v=FcMiw16bouA
+
 public class SpinnerActivity extends AppCompatActivity {
 
     private Spinner spinner;
@@ -68,7 +70,29 @@ public class SpinnerActivity extends AppCompatActivity {
                     {
                         Intent intent = new Intent(SpinnerActivity.this, LanguageCourses.class);
                         startActivity(intent);
+
+                    }else if(parent.getItemAtPosition(position).equals("History")){
+                        Intent intent = new Intent(SpinnerActivity.this, HistoryCourses.class);
+                        startActivity(intent);
+
+                    }else if(parent.getItemAtPosition(position).equals("Health")){
+                        Intent intent = new Intent(SpinnerActivity.this, HealthCourses.class);
+                        startActivity(intent);
+
+                    }else if(parent.getItemAtPosition(position).equals("Sport")){
+                        Intent intent = new Intent(SpinnerActivity.this, SportCourses.class);
+                        startActivity(intent);
+
+                    }else if(parent.getItemAtPosition(position).equals("Computers")){
+                        Intent intent = new Intent(SpinnerActivity.this, ComputerCourses.class);
+                        startActivity(intent);
                     }
+                    //if (parent.getItemAtPosition(position).equals("History"))
+                    //{
+                      //  Intent intent = new Intent(SpinnerActivity.this, HistoryCourses.class);
+                        //startActivity(intent);
+                    //}
+
 
                 }
             }

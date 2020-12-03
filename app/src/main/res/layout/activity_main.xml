@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+
     <EditText
         android:id="@+id/et_Name"
         android:layout_width="0dp"
@@ -13,13 +15,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/CustomerName"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_age"
@@ -40,11 +42,10 @@
         android:id="@+id/btn_viewAll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:text="@string/view_all"
         app:layout_constraintEnd_toStartOf="@+id/btnAdd"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_age" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_next" />
 
     <Button
         android:id="@+id/btnAdd"
@@ -57,26 +58,26 @@
 
     <ListView
         android:id="@+id/lv_customerList"
-        android:layout_width="342dp"
-        android:layout_height="299dp"
+        android:layout_width="284dp"
+        android:layout_height="129dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_viewAll"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.219" />
 
     <Button
         android:id="@+id/btn_next"
-        android:layout_width="81dp"
-        android:layout_height="25dp"
+        android:layout_width="101dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="72dp"
         android:text="@string/MoveActivity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_age" />
 

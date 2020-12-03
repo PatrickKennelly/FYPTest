@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         et_name = findViewById(R.id.et_Name);
         lv_customerList = findViewById(R.id.lv_customerList);
 
-        //listeners
+        //Setting up the OnClick listeners for each button
 
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,10 +40,12 @@ public class MainActivity extends AppCompatActivity {
 
                 CustomerDetail customerDetail;
 
+                //Creating error handling by implementing a Try, Catch handler
                 try {
                     customerDetail = new CustomerDetail(-1, et_name.getText().toString(), Integer.parseInt(et_age.getText().toString()));
                     Toast.makeText(MainActivity.this, customerDetail.toString(), Toast.LENGTH_SHORT).show();
                 }
+                //If a Users details have failed to have been successfully added, the Error will provide a Success=False message and a value of -1
                 catch (Exception e){
                     Toast.makeText(MainActivity.this, "Error registering customer" , Toast.LENGTH_SHORT).show();
                     customerDetail = new CustomerDetail( -1, "error", 0);
@@ -67,12 +69,15 @@ public class MainActivity extends AppCompatActivity {
                 DataBase dataBase = new DataBase(MainActivity.this);
                 List<CustomerDetail> everyone = dataBase.getEveryone();
 
+                //The purpose of the View all button is to allow a user to see their information being added to the database which is shown through the list view container
+
                 ArrayAdapter customerArrayAdapter = new ArrayAdapter<CustomerDetail>(MainActivity.this, android.R.layout.simple_list_item_1, everyone);
                 lv_customerList.setAdapter(customerArrayAdapter);
                 //Toast.makeText(MainActivity.this, everyone.toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
+        //This button will act as a simple Login button which brings the User from one activity to another, specifically the 'Choose Interest' page.
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

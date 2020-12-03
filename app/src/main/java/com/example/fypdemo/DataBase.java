@@ -53,9 +53,9 @@ public class DataBase extends SQLiteOpenHelper {
 
     public List<CustomerDetail> getEveryone() {
 
-    List<CustomerDetail> returnList = new ArrayList<>();
+        List<CustomerDetail> returnList = new ArrayList<>();
 
-    //get data from DB
+        //get data from DB
 
         String queryString = "SELECT * FROM " + CUSTOMER_TABLE;
 
@@ -63,7 +63,7 @@ public class DataBase extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-     // cursor is the result set
+        // cursor is the result set
         Cursor cursor = db.rawQuery(queryString, null);
 
         if (cursor.moveToFirst()) {
@@ -76,7 +76,7 @@ public class DataBase extends SQLiteOpenHelper {
                 CustomerDetail newCustomer = new CustomerDetail(customerID, customerName, customerAge);
                 returnList.add(newCustomer);
 
-             //proceed through DB one at a time
+                //proceed through DB one at a time
             } while (cursor.moveToNext());
 
         }
